@@ -1,0 +1,68 @@
+{
+  "name": "@davymassoneto/pi-subagent",
+  "version": "0.12.1",
+  "description": "Pi9 subagent runtime with a thin gentle-pi subagent_* facade.",
+  "license": "MIT",
+  "author": "Davy Massoneto (fork); original @pi9/subagent by Chase Cummings",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavyMassoneto/pi-subagent.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DavyMassoneto/pi-subagent/issues"
+  },
+  "homepage": "https://github.com/DavyMassoneto/pi-subagent#readme",
+  "files": [
+    "src",
+    "media",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "pi",
+    "pi-extension",
+    "pi-package",
+    "pi9",
+    "subagent",
+    "gentle-pi"
+  ],
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "scripts": {
+    "typecheck": "tsc",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "sample:ids": "node scripts/sample-ids.mjs",
+    "sort:identifier-words": "node scripts/sort-identifier-word-lists.mjs",
+    "prepublishOnly": "npm run typecheck && npm test"
+  },
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ],
+    "skills": [],
+    "prompts": [],
+    "image": "https://raw.githubusercontent.com/Chase-C/pi9/main/packages/subagent/media/conversations-overlay.png"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*",
+    "typebox": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-ai": "^0.82.1",
+    "@earendil-works/pi-coding-agent": "^0.82.1",
+    "@earendil-works/pi-tui": "^0.82.1",
+    "typebox": "^1.1.38",
+    "typescript": "~6.0.3",
+    "vitest": "^4.1.6"
+  }
+}
